@@ -1,0 +1,25 @@
+{
+  "name": "srt2vtt",
+  "version": "1.0.0",
+  "description": "Convert SubRip Subtitle files into webVTT tracks",
+  "main": "bin/srt2vtt.js",
+  "repository": "posixpascal@github.com/srt2vtt.git",
+  "author": "Pascal Raszyk <posixpascal@googlemail.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "./node_modules/.bin/tsc -w",
+    "test": "mocha -r ts-node/register test/**/*.ts"
+  },
+  "dependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.39",
+    "@types/node": "^7.0.5",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "ts-node": "^2.1.0",
+    "tslint-loader": "^3.3.0",
+    "tslint-microsoft-contrib": "^4.0.0",
+    "typescript": "^2.2.1",
+    "typings": "^2.1.0"
+    }
+}
