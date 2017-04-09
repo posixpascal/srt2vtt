@@ -1,5 +1,5 @@
 # srt2vtt
-
+tbd.
 Transform SubRip Subtitle files into webVTT which can then be consumed by HTML5 `<video>`
 
 

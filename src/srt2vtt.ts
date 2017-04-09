@@ -1,12 +1,11 @@
 export const srt2vtt = (input:string) => {
     const parser = new SRTParser();
     parser.load(input);
-    
-    const output = [
+    const chunks = parser.getTracks().filter(track => track.hasBody()).map(track => track.toWebVTT())
+    return [
         'WEBVTT',
         '',
-        `${parser.getTracks().map(track => track.toWebVTT()).join("\n\n")}`].join("\n");
-    console.log(output);
+        `${chunks.join("\n\n")}`].join("\n");
 }
 
 class SRTParser {
@@ -29,6 +28,10 @@ class SRTTrack {
     public message : string = "";
     public range : SRTTimeRange;
     constructor(){}
+
+    hasBody(){
+        return this.message.trim() && this.message.trim() !== "."
+    }
 
     public toWebVTT(){
         // format: HH:MM:SS.millis
